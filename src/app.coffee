@@ -49,7 +49,7 @@ client.auth { username: config.username, password: config.password }, (e, api) -
 							
 							console.log 'Pull Error : ', e if e
 							
-							api.post "/apps/#{app.id}/build", {form: {data: {platforms: ['ios']}}}, (e, data) ->
+							api.post "/apps/#{app.id}/build/ios", (e, data) ->
 								console.log ' Build Error : ', e if e
 							
 								cb()
