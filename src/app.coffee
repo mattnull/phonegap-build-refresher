@@ -1,33 +1,6 @@
 express = require('express')
 app = express()
 server = require('http').createServer(app)
-passport = require 'passport'
-config = require './config/config'
-# io = require('socket.io').listen(server)
-fs = require 'fs'
-
-# Connect to the DB
-# mongoose = require 'mongoose'
-# mongoose.connect(config.dbURI)
-
-# Models
-models = __dirname + '/models'
-fs.readdirSync(models).forEach (file) ->
-  require(models + '/'  +file)
-
-# Passport Config
-require('./config/passport')(passport, config)
-
-# Express Config
-require('./config/express')(app, passport)
-
-# Routes
-require('./config/routes')(app, passport)
-
-# Socket Events
-# io.sockets.on 'connection', (socket) ->
-#   socket.emit 'hello', {data : 'Hi!'}
-
 
 client = require 'phonegap-build-api'
 async = require 'async'
@@ -45,11 +18,11 @@ client.auth { username: config.username, password: config.password }, (e, api) -
 
 						console.log "Refreshing #{app.title}"
 
-						api.put "/apps/#{app.id}}", {'pull' : true}, (e , data) ->
+						api.put "/apps/#{app.id}}",options = {form: {data: {pull: true}}}, (e , data) ->
 							
 							console.log 'Pull Error : ', e if e
-							
-							api.post "/apps/#{app.id}/build/ios", (e, data) ->
+	
+							api.post "/apps/#{app.id}/build/", {form: {data: {platforms: ['ios']}}}, (e, data) ->
 								console.log ' Build Error : ', e if e
 							
 								cb()
