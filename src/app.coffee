@@ -32,7 +32,7 @@ client.auth { username: config.username, password: config.password }, (e, api) -
 
 		setInterval () ->
 			refresh()
-		, 60000
+		, 30000
 
 		refresh()
 
