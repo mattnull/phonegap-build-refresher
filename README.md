@@ -4,10 +4,9 @@ PhoneGap Build Refresher updates your PGB apps that are linked to a Github repo 
 
 ====================
 
-## Technologies
+## Setup
 
-* Express.js - http://expressjs.com/
-* CoffeeScript - http://coffeescript.org/
+run `npm install`
 
 ## Config
 Create a config file called phonegapbuildconfig.js.
