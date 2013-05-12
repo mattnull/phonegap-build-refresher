@@ -10,7 +10,9 @@ PhoneGap Build Refresher updates your PGB apps that are linked to a Github repo 
 * CoffeeScript - http://coffeescript.org/
 
 ## Config
-Create a config file called phonegapbuildconfig.js
+Create a config file called phonegapbuildconfig.js.
+This file should be kept in the root directory
+
 ````javascript
 module.exports = {
 	username : 'my phonegap build username',
